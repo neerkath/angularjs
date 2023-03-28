@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+   
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+         var app=angular.module("myApp",[]);
+         app.controller('oneway',function($scope){
+         $scope.msg="Welcome to learn from angular!";
+         });
+    </script>
+</head>
+<body bg="lightblue">
+    <center>
+        <div ng-controller="oneway">
+            {{msg}}
+            <br>
+          <span ng-bind="msg"></span>
+        </div>
+    </center>
+</body>
+</html>

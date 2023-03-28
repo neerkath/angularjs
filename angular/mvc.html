@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="custapp">
+<head>
+   
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="text/javascript">
+        var app=angular.module("custapp",[]);
+        //controller
+        app.controller('myCustomer',function($scope){
+            // model
+             $scope.customer={
+                'name':'nkl',
+                'gender':'male',
+                'job':'developer'
+             }
+        });
+
+    </script>
+</head>
+<body>
+    <h1>MVC ARCHITECTURE</h1>
+<!-- view -->
+    <div ng-controller='myCustomer'>
+        <h3>{{customer.name}}</h3>
+        
+        <h3>{{customer.gender}}</h3>
+        <h3>{{customer.job}}</h3>
+
+    </div>
+</body>
+</html>

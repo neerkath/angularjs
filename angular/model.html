@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+     var app=angular.module("myApp",[]);
+         app.controller('empcontroller',function($scope){
+         $scope.info="About employee data!";
+         $scope.empdata=function(data){
+            console.log(data);
+         };
+         });
+  </script>
+
+    <title>Document</title>
+</head>
+<body bgcolor="yellow" ng-app="myApp">
+
+    <div ng-controller="empcontroller">
+        <h5>{{info}}</h5>
+    <center>
+        <form action="#">
+            Employee name <br>
+            <input type="text" placeholder="name" ng-model="emp.name"><br>
+            Employee ID<br>
+            <input type="number" placeholder="ID" ng-model="emp.number"><br>
+            Employee Designation<br>
+            <input type="text" placeholder="name" ng-model="emp.design"><br>
+          
+            <input type="submit" value="submit" ng-click="empdata(emp)">
+        </form>
+        </center>
+    </div>
+    
+</body>
+</html>

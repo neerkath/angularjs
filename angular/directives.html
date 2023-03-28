@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="custapp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script>
+    var app=angular.module("custapp",[]);
+        //controller
+        app.controller('myCustomer',function($scope){
+            $scope.msg="welcome";
+            $scope.name=function(){
+                alert("jack");
+            }
+            $scope.mailid=function(msg){
+                alert(msg);
+            }
+            $scope.fname="jack";
+            $scope.lname="sparrow";
+            $scope.Course="java";
+            $scope.duration="3months";
+
+        });
+        app.controller('hai',function($scope){
+            $scope.empname="neerkath";
+            $scope.empsalary=100000;
+        });
+
+
+        app.controller('parent',function($scope){
+           
+            $scope.info="peter-louis";
+        });
+        app.controller('child',function($scope){
+          
+            $scope.info="stewie";
+        });
+        
+        
+ </script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightblue;
+            width:200px;
+            margin:auto;
+            font-size:medium;
+            font-weight:100;
+        }
+    </style>
+</head>
+<body >
+    <center>
+    <h1>Angulardirectives</h1>
+    <div>
+<p>{{'HELLO'}}<br>
+    {{ 100 * 2 }}
+</p>
+    </div>
+    <div ng-init="radius=50; PI=3.14">
+        {{2*PI*radius}}
+    </div>
+
+    <div>Course:<input type="text" ng-model="course"><br>
+        {{course}}
+        Duration:<input type="text" ng-model="duration"><br>
+            {{duration}}
+            
+
+    </div>
+    <div ng-init="array=[100,2,3,4]">
+        <ol>
+            <li ng-repeat="x in array">{{ x }}</li>
+        </ol>
+    </div>
+    <div ng-init="checked=true">
+        New user:<input type="checkbox" x_model="checked">
+        <br>
+        Name:<input type="text" ng-if="checked" value="jack">
+        Read Only:<input type="text" ng-readonly="checked" value="nkl">
+        Disabled:<input type="text" ng-disabled="checked" value="neer">
+    </div>
+    <div ng-controller='myCustomer'>
+           {{ msg}}
+           <br>
+           <button ng-click="name()">Display name</button>
+           <br>
+           Enter EmailId:
+           <input type="text" ng-model="mail">
+           <button ng-click="mailid(mail)">Display mail</button>
+    </div>
+
+    <div ng-controller="myCustomer">
+        
+             {{fname+lname}}
+    </div>
+   
+<div ng-controller="hai">
+    Employee-Name:{{empname}}<br>
+    Employee-salary:{{empsalary}}<br>
+</div>
+
+<div ng-controller="parent">
+
+    Parent:{{info}}
+<div ng-controller="child">
+    
+    Child:{{info}}
+    Parent inside child:{{info}}
+   
+</div>
+child inside parent:{{info}}
+</div>
+
+
+
+        
+    </center>
+</body>
+</html>

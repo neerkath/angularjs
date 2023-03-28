@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="resultcontroller.js"></script>
+    
+    <title>Document</title>
+</head>
+<body >
+    <div ng-controller='result'>
+    <ol>
+    <li ng-repeat='x in res'>
+            {{ x.name + " - "+ x.grade }}
+    </li>
+</ol>
+</div>
+</body>
+</html>
